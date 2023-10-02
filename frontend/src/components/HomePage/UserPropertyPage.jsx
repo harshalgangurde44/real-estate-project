@@ -37,7 +37,7 @@ const UserPropertyPage = () => {
     const sendRequest = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/property/${userId}`,
+          `https://backend-real-estate-keka.onrender.com/api/property/${userId}`,
           {
             method: "GET",
             headers: {
@@ -85,12 +85,15 @@ const UserPropertyPage = () => {
     event.preventDefault();
     const searchValue = searchInputRef.current.value;
     const token = getAuthToken();
-    fetch(`http://localhost:8080/api/property/search/${searchValue}`, {
-      method: "GET",
-      headers: {
-        Authorization: token,
-      },
-    })
+    fetch(
+      `https://backend-real-estate-keka.onrender.com/api/property/search/${searchValue}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: token,
+        },
+      }
+    )
       .then((response) => {
         return response.json();
       })
@@ -132,13 +135,16 @@ const UserPropertyPage = () => {
 
   const deleteHandler = (PPD_ID) => {
     const token = getAuthToken();
-    fetch(`http://localhost:8080/api/property/delete/${PPD_ID}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-    })
+    fetch(
+      `https://backend-real-estate-keka.onrender.com/api/property/delete/${PPD_ID}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      }
+    )
       .then((response) => {
         return response.json();
       })
@@ -156,12 +162,15 @@ const UserPropertyPage = () => {
   };
   const editPropertyHandler = (PPD_ID) => {
     const token = getAuthToken();
-    fetch(`http://localhost:8080/api/property/search/${PPD_ID}`, {
-      method: "GET",
-      headers: {
-        Authorization: token,
-      },
-    })
+    fetch(
+      `https://backend-real-estate-keka.onrender.com/api/property/search/${PPD_ID}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: token,
+        },
+      }
+    )
       .then((response) => {
         return response.json();
       })
@@ -180,12 +189,15 @@ const UserPropertyPage = () => {
   const successHandler = () => {
     const searchValue = searchInputRef.current.value;
     const token = getAuthToken();
-    fetch(`http://localhost:8080/api/property/search/${searchValue}`, {
-      method: "GET",
-      headers: {
-        Authorization: token,
-      },
-    })
+    fetch(
+      `https://backend-real-estate-keka.onrender.com/api/property/search/${searchValue}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: token,
+        },
+      }
+    )
       .then((response) => {
         return response.json();
       })

@@ -41,7 +41,7 @@ const MainNavigation = () => {
 
   useEffect(() => {
     const token = getAuthToken().toString();
-    fetch(`http://localhost:8080/api/users/userId`, {
+    fetch(`https://backend-real-estate-keka.onrender.com/api/users/userId`, {
       method: "GET",
       headers: {
         Authorization: token,

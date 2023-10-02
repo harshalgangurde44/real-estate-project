@@ -30,7 +30,9 @@ const HomePage = () => {
   useEffect(() => {
     const sendRequest = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/property/all");
+        const response = await fetch(
+          "https://backend-real-estate-keka.onrender.com/api/property/all"
+        );
         const responseData = await response.json();
         if (!response.ok) {
           throw new Error(responseData.message);
@@ -65,12 +67,15 @@ const HomePage = () => {
     event.preventDefault();
     const searchValue = searchInputRef.current.value;
     const token = getAuthToken();
-    fetch(`http://localhost:8080/api/property/search/${searchValue}`, {
-      method: "GET",
-      headers: {
-        Authorization: token,
-      },
-    })
+    fetch(
+      `hhttps://backend-real-estate-keka.onrender.com/api/property/search/${searchValue}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: token,
+        },
+      }
+    )
       .then((response) => {
         return response.json();
       })

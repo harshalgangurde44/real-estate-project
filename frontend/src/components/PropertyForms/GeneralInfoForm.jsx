@@ -62,14 +62,17 @@ const GeneralInfoForm = () => {
       imageURL:
         "https://img.freepik.com/premium-photo/people-shaking-hands-toy-model-house_23-2148301743.jpg",
     };
-    fetch("http://localhost:8080/api/property/add/general-info", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: token,
-      },
-      body: JSON.stringify(generalInfo),
-    })
+    fetch(
+      "https://backend-real-estate-keka.onrender.com/api/property/add/general-info",
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify(generalInfo),
+      }
+    )
       .then((response) => {
         return response.json();
       })
@@ -84,12 +87,15 @@ const GeneralInfoForm = () => {
 
   const loadPropertyDetailHandler = (event) => {
     event.preventDefault();
-    fetch("http://localhost:8080/api/property/add/property-detail", {
-      method: "GET",
-      headers: {
-        Authorization: token,
-      },
-    })
+    fetch(
+      "https://backend-real-estate-keka.onrender.com/api/property/add/property-detail",
+      {
+        method: "GET",
+        headers: {
+          Authorization: token,
+        },
+      }
+    )
       .then((response) => {
         return response.json();
       })

@@ -70,14 +70,17 @@ const BasicInfoForm = () => {
     };
 
     const token = getAuthToken();
-    fetch("http://localhost:8080/api/property/add/basic-info", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: token,
-      },
-      body: JSON.stringify(basicInfo),
-    })
+    fetch(
+      "https://backend-real-estate-keka.onrender.com/api/property/add/basic-info",
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify(basicInfo),
+      }
+    )
       .then((response) => {
         return response.json();
       })
